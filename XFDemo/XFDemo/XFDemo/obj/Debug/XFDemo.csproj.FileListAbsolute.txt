@@ -1,0 +1,17 @@
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\XFDemo.dll
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\XFDemo.pdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\obj\Debug\XFDemo.csprojResolveAssemblyReference.cache
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\obj\Debug\XFDemo.dll
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\obj\Debug\XFDemo.pdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\obj\Debug\XFDemo.dll.mdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\XFDemo.dll.mdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\obj\Debug\XFDemo.dll.mdb
+C:\Users\enriqueg\Documents\GitHub\IPS-Xamarin-Test\XFDemo\XFDemo\XFDemo\bin\Debug\XFDemo.dll.mdb
