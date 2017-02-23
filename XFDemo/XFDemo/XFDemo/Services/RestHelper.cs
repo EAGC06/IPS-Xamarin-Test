@@ -40,6 +40,13 @@ namespace XFDemo.Services
             }
         }
 
+        public async Task<ResponseObject> GetRequestAsync(string uri)
+        {
+            HttpResponseMessage response = await Client.GetAsync(uri);
+
+            return await CheckResponse(response);
+        }
+
         public async Task<ResponseObject> PostRequestAsync(object content, string uri)
         {
             HttpResponseMessage response = await Client.PostAsync(uri, new StringContent(JsonConvert.SerializeObject(content)));

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 
+using XFDemo;
 using XFDemo.Model;
 using XFDemo.Extensions;
 using Xamarin.Forms;
@@ -64,7 +65,12 @@ namespace XFDemo.Pages.Authentication
             if (await user.AuthenticateAsync())
             {
                 //TODO: Go to Contact List.
-                btnLogin.Text = "Login correct";
+                //btnLogin.Text = "Login correct";
+
+                //Navigation.InsertPageBefore(new Pages.Contacts.MyContacts(), this);
+                //await Navigation.PopAsync();
+
+                App.Current.MainPage = new NavigationPage(new Pages.Contacts.MyContacts());
             }
 
             else

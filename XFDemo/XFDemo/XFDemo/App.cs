@@ -11,7 +11,7 @@ namespace XFDemo
     {
         public App()
         {
-            MainPage = new Pages.Authentication.Login();
+            MainPage = new NavigationPage(new Pages.Authentication.Login());
         }
 
         protected override void OnStart()
