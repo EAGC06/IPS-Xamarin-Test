@@ -64,12 +64,6 @@ namespace XFDemo.Pages.Authentication
 
             if (await user.AuthenticateAsync())
             {
-                //TODO: Go to Contact List.
-                //btnLogin.Text = "Login correct";
-
-                //Navigation.InsertPageBefore(new Pages.Contacts.MyContacts(), this);
-                //await Navigation.PopAsync();
-
                 App.Current.MainPage = new NavigationPage(new Pages.Contacts.MyContacts());
             }
 

@@ -7,6 +7,7 @@ using System.Text;
 using XFDemo.Model;
 using XFDemo.Extensions;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace XFDemo.Pages.Contacts
 {
@@ -18,20 +19,53 @@ namespace XFDemo.Pages.Contacts
 
         public MyContacts()
         {
-            Content = myContactsListView;
+            Title = "XFDemo";
 
-            //Content = new StackLayout
-            //{
-            //    Children = {
-            //        myContactsListView
-            //    }
-            //};
+            lblContactsMessage.TextColor = Color.Black;
+
+            myContactsListView.IsPullToRefreshEnabled = true;
+            myContactsListView.Refreshing += myContactsListView_OnRefreshing;
+            myContactsListView.ItemTapped += myContactsListView_OnItemTapped;
+            myContactsListView.ItemSelected += myContactsListView_OnItemSelected;
+
+            Content = myContactsListView;
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             
+            await LoadMyContactsAsync();     
+
+            myContactsListView.Header = lblContactsMessage;
+            myContactsListView.ItemTemplate = new DataTemplate(typeof(Views.ContactCell));            
+        }
+
+        protected void myContactsListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+
+            ((ListView)sender).SelectedItem = null;
+        }
+
+        protected void myContactsListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            //TODO: Go to Contact Info.
+            //await Navigation.PushAsync(Pages.Contacts.ContactInfo);
+        }
+
+        protected async void myContactsListView_OnRefreshing(object sender, EventArgs e)
+        {
+            await LoadMyContactsAsync();
+
+            ((ListView)sender).EndRefresh();
+        }
+
+        private async Task LoadMyContactsAsync()
+        {
             List<Contact> contacts = new List<Contact>();
             await contacts.LoadContactsAsync();
 
@@ -45,12 +79,7 @@ namespace XFDemo.Pages.Contacts
             else
             {
                 lblContactsMessage.Text = "No contacts to display.";
-            }           
-
-            myContactsListView.Header = lblContactsMessage;
-            myContactsListView.ItemTemplate = new DataTemplate(typeof(TextCell));
-            myContactsListView.ItemTemplate.SetBinding(TextCell.TextProperty, "Name");
-            myContactsListView.ItemTemplate.SetBinding(TextCell.DetailProperty, "Email");
+            }
         }
     }
 }
