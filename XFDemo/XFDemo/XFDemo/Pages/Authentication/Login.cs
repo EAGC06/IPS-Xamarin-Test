@@ -32,7 +32,7 @@ namespace XFDemo.Pages.Authentication
 
             btnLogin.Text = "Login";
             btnLogin.TextColor = Color.White;
-            btnLogin.BackgroundColor = Color.FromRgb(18, 137, 245);
+            btnLogin.BackgroundColor = Color.FromRgb(33, 150, 243);
             btnLogin.Clicked += btnLogin_OnClicked;
 
             Title = "XFDemo";

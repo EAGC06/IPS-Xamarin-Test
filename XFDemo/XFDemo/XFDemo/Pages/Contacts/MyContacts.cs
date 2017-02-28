@@ -51,10 +51,10 @@ namespace XFDemo.Pages.Contacts
             ((ListView)sender).SelectedItem = null;
         }
 
-        protected void myContactsListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        protected async void myContactsListView_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             //TODO: Go to Contact Info.
-            //await Navigation.PushAsync(Pages.Contacts.ContactInfo);
+            await Navigation.PushAsync(new Pages.Contacts.ContactInfo(e.Item as Model.Contact));
         }
 
         protected async void myContactsListView_OnRefreshing(object sender, EventArgs e)
