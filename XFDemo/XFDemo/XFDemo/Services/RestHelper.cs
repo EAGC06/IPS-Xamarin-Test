@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using System.Net.Http;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
+using Plugin.Connectivity.Abstractions;
 
 namespace XFDemo.Services
 {
@@ -40,18 +42,56 @@ namespace XFDemo.Services
             }
         }
 
+        private bool IsConnected
+        {
+            get
+            {
+                return CrossConnectivity.Current.IsConnected;
+            }
+        }
+
         public async Task<ResponseObject> GetRequestAsync(string uri)
         {
-            HttpResponseMessage response = await Client.GetAsync(uri);
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, uri);
 
-            return await CheckResponse(response);
+            return await ExecuteRequest(request);
+
+            //HttpResponseMessage response = await Client.GetAsync(uri);
+
+            //return await CheckResponse(response);
         }
 
         public async Task<ResponseObject> PostRequestAsync(object content, string uri)
         {
-            HttpResponseMessage response = await Client.PostAsync(uri, new StringContent(JsonConvert.SerializeObject(content)));
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, uri)
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(content))
+            };
 
-            return await CheckResponse(response);
+            return await ExecuteRequest(request);
+
+            //HttpResponseMessage response = await Client.PostAsync(uri, new StringContent(JsonConvert.SerializeObject(content)));
+
+            //return await CheckResponse(response);
+        }
+
+        private async Task<ResponseObject> ExecuteRequest(HttpRequestMessage request)
+        {
+            if (IsConnected)
+            {
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                return await CheckResponse(response);
+            }
+
+            else
+            {
+                return new ResponseObject()
+                {
+                    IsSuccessResponse = false,
+                    StatusMessage = "No connection detected."
+                };
+            }
         }
 
         private async Task<ResponseObject> CheckResponse(HttpResponseMessage response)
