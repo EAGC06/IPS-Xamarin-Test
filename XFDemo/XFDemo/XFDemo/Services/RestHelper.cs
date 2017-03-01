@@ -100,10 +100,16 @@ namespace XFDemo.Services
 
             ResponseObject responseObj = new Services.ResponseObject()
             {
-                Content = JsonConvert.DeserializeObject<T>(json),
                 IsSuccessResponse = response.IsSuccessStatusCode,
-                StatusCode = response.StatusCode
-            };           
+                StatusCode = response.StatusCode,
+                StatusMessage = response.ReasonPhrase
+            };
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                responseObj.Content = JsonConvert.DeserializeObject<T>(json);
+            }  
 
             return responseObj;      
         }

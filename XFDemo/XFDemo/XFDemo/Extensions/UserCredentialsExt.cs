@@ -22,6 +22,8 @@ namespace XFDemo.Extensions
 
             else
             {
+                await response.ProcessError();
+
                 return false;
             }
         }

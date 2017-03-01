@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Extensions\AddressExt.cs" />
+    <Compile Include="Extensions\BaseExt.cs" />
     <Compile Include="Extensions\ContactExt.cs" />
     <Compile Include="Extensions\UserCredentialsExt.cs" />
     <Compile Include="Model\Address.cs" />

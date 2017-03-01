@@ -17,14 +17,15 @@ namespace XFDemo.Extensions
 
             if (response.IsSuccessResponse)
             {
-                //contacts = response.Content as List<Contact>;
-
-                //contacts = new List<Contact>(response.Content as List<Contact>);
-
                 foreach (Contact item in response.Content as List<Contact>)
                 {
                     contacts.Add(item);
                 }
+            }
+
+            else
+            {
+                await response.ProcessError();
             }
         }
     }
