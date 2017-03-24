@@ -12,6 +12,8 @@ namespace XFDemo
         public App()
         {
             MainPage = new NavigationPage(new Pages.Authentication.Login());
+
+            //MainPage = new Pages.MapPage();
         }
 
         protected override void OnStart()
